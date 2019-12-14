@@ -1,1 +1,9 @@
-alias hello="echo hello"
+bold_text=$(tput bold)
+normal_text=$(tput sgr0)
+
+function cd() {
+  builtin cd "$@" &&
+  ls -l &&
+  echo -n "${bold_text}In Directory: ${normal_text}" &&
+  pwd;
+}
