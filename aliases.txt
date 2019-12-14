@@ -7,3 +7,10 @@ function cd() {
   echo -n "${bold_text}In Directory: ${normal_text}" &&
   pwd;
 }
+
+function mkdir() {
+  command mkdir "$@" &&
+  cd "$@";
+}
+
+alias dev="cd /Users/ryankrol/Dev"
