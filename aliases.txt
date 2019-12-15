@@ -18,7 +18,7 @@ function ec2login() {
 }
 
 function travis_encrypt() {
-  openssl aes-256-cbc -in $1 -out $2 -k $3
+  openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
 }
 
 alias dev="cd /Users/ryankrol/Dev"
