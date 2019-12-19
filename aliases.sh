@@ -21,4 +21,12 @@ function travis_encrypt() {
   openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
 }
 
+function update_branches() {
+  git checkout master
+  git pull
+  git checkout development
+  git pull
+}
+
 alias dev="cd /Users/ryankrol/Dev"
+
