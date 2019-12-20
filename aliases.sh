@@ -21,6 +21,10 @@ function encrypt() {
   openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
 }
 
+function decrypt() {
+  openssl aes-256-cbc -d -a -in $1 -out $2 -k $3
+}
+
 function update_branches() {
   git checkout master
   git pull
@@ -29,4 +33,3 @@ function update_branches() {
 }
 
 alias dev="cd /Users/ryankrol/Dev"
-
