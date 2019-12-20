@@ -33,3 +33,6 @@ function update_branches() {
 }
 
 alias dev="cd /Users/ryankrol/Dev"
+alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
+alias siteapi="cd /Users/ryankrol/Dev/ryankrol.co.uk-api"
+alias zshrc="cd /Users/ryankrol/Dev/Zshrc"
