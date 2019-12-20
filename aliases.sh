@@ -17,7 +17,7 @@ function ec2login() {
   ssh -i /Users/ryankrol/Dev/Resources/AWS/ec2_key_pair.pem "ec2-user@$1"
 }
 
-function travis_encrypt() {
+function encrypt() {
   openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
 }
 
