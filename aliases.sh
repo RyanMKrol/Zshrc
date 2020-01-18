@@ -32,6 +32,14 @@ function update_branches() {
   git pull
 }
 
+function checkgit() {
+  for d in */ ; do
+    builtin cd "$d"
+    git status
+    builtin cd ..
+  done
+}
+
 alias dev="cd /Users/ryankrol/Dev"
 alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
 alias siteapi="cd /Users/ryankrol/Dev/ryankrol.co.uk-api"
