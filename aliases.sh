@@ -43,5 +43,7 @@ function checkgit() {
 alias dev="cd /Users/ryankrol/Dev"
 alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
 alias siteapi="cd /Users/ryankrol/Dev/ryankrol.co.uk-api"
+alias ratings="cd /Users/ryankrol/Dev/RatingsPlotter-Site"
+alias ratingsapi="cd /Users/ryankrol/Dev/RatingsPlotter-API"
 alias zshrc="cd /Users/ryankrol/Dev/Zshrc"
 alias atomadd="atom -a $@"
