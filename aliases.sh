@@ -35,6 +35,7 @@ function update_branches() {
 function checkgit() {
   for d in */ ; do
     builtin cd "$d"
+    echo -n "${bold_text}In Directory: ${normal_text}" && pwd;
     git status
     builtin cd ..
   done
