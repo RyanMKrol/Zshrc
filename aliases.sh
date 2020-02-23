@@ -30,6 +30,7 @@ function update_branches() {
   git pull
   git checkout development
   git pull
+  git merge master
 }
 
 function checkgit() {
