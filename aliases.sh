@@ -43,6 +43,7 @@ function checkgit() {
 }
 
 alias dev="cd /Users/ryankrol/Dev"
+alias npmpackages="cd /Users/ryankrol/Dev/npm-packages"
 alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
 alias siteapi="cd /Users/ryankrol/Dev/ryankrol.co.uk-api"
 alias ratings="cd /Users/ryankrol/Dev/RatingsPlotter-Site"
