@@ -42,6 +42,22 @@ function checkgit() {
   done
 }
 
+function remove_nm() {
+  for d in */ ; do
+    builtin cd "$d"
+    rm -rf node_modules
+    builtin cd ..
+  done
+}
+
+function remove_builds() {
+  for d in */ ; do
+    builtin cd "$d"
+    rm -rf build
+    builtin cd ..
+  done
+}
+
 alias dev="cd /Users/ryankrol/Dev"
 alias npmpackages="cd /Users/ryankrol/Dev/npm-packages"
 alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
