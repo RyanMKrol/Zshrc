@@ -58,6 +58,20 @@ function remove_builds() {
   done
 }
 
+function remove_pl() {
+  for d in */ ; do
+    builtin cd "$d"
+    rm -rf package-lock.json
+    builtin cd ..
+  done
+}
+
+function clean_node_packages() {
+  remove_nm
+  remove_builds
+  remove_pl
+}
+
 alias dev="cd /Users/ryankrol/Dev"
 alias npmpackages="cd /Users/ryankrol/Dev/npm-packages"
 alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
