@@ -25,6 +25,17 @@ function decrypt() {
   openssl aes-256-cbc -d -a -in $1 -out $2 -k $3
 }
 
+# Method to decrypt all files in a folder
+# arg1: password to use to decrypt everything
+# Note: this assumes that you use the same password to encrypt everything
+function decryptall() {
+  for encryptedFile in *.enc ; do
+    decryptTarget=$(echo $encryptedFile | sed 's/.enc//')
+    decrypt $encryptedFile $decryptTarget $1
+  done
+}
+
+# Method to bring my development branch up to date
 function update_branches() {
   git checkout master
   git pull
