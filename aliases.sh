@@ -1,6 +1,8 @@
 bold_text=$(tput bold)
 normal_text=$(tput sgr0)
 
+# Method to override default cd command
+# arg1: the folder to change to
 function cd() {
   builtin cd "$@" &&
   ls -l &&
@@ -8,19 +10,31 @@ function cd() {
   pwd;
 }
 
+# Method to override default mkdir command
+# arg1: the folder to create
 function mkdir() {
   command mkdir "$@" &&
   cd "$@";
 }
 
+# Method to login to my ec2 instances
+# arg1: the host IP
 function ec2login() {
   ssh -i /Users/ryankrol/Dev/Resources/AWS/ec2_key_pair.pem "ec2-user@$1"
 }
 
+# Method to encrypt a file
+# arg1: file to encrypt
+# arg2: file to generate
+# arg3: password to use to encrypt
 function encrypt() {
   openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
 }
 
+# Method to decrypt a file
+# arg1: file to decrypt
+# arg2: file to generate
+# arg3: password to use to decrypt
 function decrypt() {
   openssl aes-256-cbc -d -a -in $1 -out $2 -k $3
 }
@@ -44,6 +58,7 @@ function update_branches() {
   git merge master
 }
 
+# Method to check every git repo from a containing directory
 function checkgit() {
   for d in */ ; do
     builtin cd "$d"
@@ -53,6 +68,7 @@ function checkgit() {
   done
 }
 
+# Method to remove node modules from every sub-folder
 function remove_nm() {
   for d in */ ; do
     builtin cd "$d"
@@ -61,6 +77,7 @@ function remove_nm() {
   done
 }
 
+# Method to remove build folders from every sub-folder
 function remove_builds() {
   for d in */ ; do
     builtin cd "$d"
@@ -69,6 +86,7 @@ function remove_builds() {
   done
 }
 
+# Method to remove package-lock files from every sub-folder
 function remove_pl() {
   for d in */ ; do
     builtin cd "$d"
@@ -77,6 +95,7 @@ function remove_pl() {
   done
 }
 
+# Method to clean up node packages in every sub-folder
 function clean_node_packages() {
   remove_nm
   remove_builds
