@@ -20,7 +20,7 @@ function mkdir() {
 # Method to login to my ec2 instances
 # arg1: the host IP
 function ec2login() {
-  ssh -i /Users/ryankrol/Dev/Resources/AWS/ec2_key_pair.pem "ec2-user@$1"
+  ssh -i /Users/ryankrol/Development/Resources/AWS/ec2_key_pair.pem "ec2-user@$1"
 }
 
 # Method to encrypt a file
@@ -102,13 +102,13 @@ function clean_node_packages() {
   remove_pl
 }
 
-alias dev="cd /Users/ryankrol/Dev"
-alias npmpackages="cd /Users/ryankrol/Dev/npm-packages"
-alias site="cd /Users/ryankrol/Dev/ryankrol.co.uk"
-alias siteapi="cd /Users/ryankrol/Dev/ryankrol.co.uk-api"
-alias ratings="cd /Users/ryankrol/Dev/RatingsPlotter-Site"
-alias ratingsapi="cd /Users/ryankrol/Dev/RatingsPlotter-API"
-alias zshrc="cd /Users/ryankrol/Dev/Zshrc"
+alias dev="cd /Users/ryankrol/Development"
+alias site="cd /Users/ryankrol/Development/ryankrol.co.uk"
+alias siteapi="cd /Users/ryankrol/Development/ryankrol.co.uk-api"
+alias ratings="cd /Users/ryankrol/Development/RatingsPlotter-Site"
+alias ratingsapi="cd /Users/ryankrol/Development/RatingsPlotter-API"
+alias zshrc="cd /Users/ryankrol/Development/Zshrc"
+alias createnoodles="cd /Users/ryankrol/Development/create-noodle-app"
+
 alias atomadd="atom -a $@"
-alias createnoodles="cd /Users/ryankrol/Dev/npm-packages/create-noodle-app"
 alias zip="zip -r $@"
