@@ -28,7 +28,7 @@ function ec2login() {
 # arg2: file to generate
 # arg3: password to use to encrypt
 function encrypt() {
-  openssl aes-256-cbc -a -salt -in $1 -out $2 -k $3
+  openssl aes-256-cbc -pbkdf2 -a -salt -in $1 -out $2 -k $3
 }
 
 # Method to decrypt a file
@@ -36,7 +36,7 @@ function encrypt() {
 # arg2: file to generate
 # arg3: password to use to decrypt
 function decrypt() {
-  openssl aes-256-cbc -d -a -in $1 -out $2 -k $3
+  openssl aes-256-cbc -pbkdf2 -d -a -in $1 -out $2 -k $3
 }
 
 # Method to decrypt all files in a folder
