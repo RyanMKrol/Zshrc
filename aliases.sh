@@ -70,36 +70,34 @@ function checkgit() {
 
 # Method to remove node modules from every sub-folder
 function remove_nm() {
-  for d in */ ; do
-    builtin cd "$d"
-    rm -rf node_modules
-    builtin cd ..
-  done
+  rm -rf node_modules
 }
 
 # Method to remove build folders from every sub-folder
 function remove_builds() {
-  for d in */ ; do
-    builtin cd "$d"
-    rm -rf build
-    builtin cd ..
-  done
+  rm -rf build
 }
 
 # Method to remove package-lock files from every sub-folder
 function remove_pl() {
-  for d in */ ; do
-    builtin cd "$d"
-    rm -rf package-lock.json
-    builtin cd ..
-  done
+  rm -rf package-lock.json
+}
+
+# Method to clean up a node package
+function clean_node_package() {
+  remove_nm
+  remove_builds
+  remove_pl
 }
 
 # Method to clean up node packages in every sub-folder
 function clean_node_packages() {
-  remove_nm
-  remove_builds
-  remove_pl
+  for d in */ ; do
+    builtin cd "$d"
+    remove_nm
+    remove_builds
+    remove_pl
+  done
 }
 
 alias dev="cd /Users/ryankrol/Development"
