@@ -101,12 +101,6 @@ function clean_node_packages() {
 }
 
 alias dev="cd /Users/ryankrol/Development"
-alias site="cd /Users/ryankrol/Development/ryankrol.co.uk"
-alias siteapi="cd /Users/ryankrol/Development/ryankrol.co.uk-api"
-alias ratings="cd /Users/ryankrol/Development/RatingsPlotter-Site"
-alias ratingsapi="cd /Users/ryankrol/Development/RatingsPlotter-API"
 alias zshrc="cd /Users/ryankrol/Development/Zshrc"
-alias createnoodles="cd /Users/ryankrol/Development/create-noodle-app"
 
-alias atomadd="atom -a $@"
 alias zip="zip -r $@"
