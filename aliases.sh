@@ -49,15 +49,6 @@ function decryptall() {
   done
 }
 
-# Method to bring my development branch up to date
-function update_branches() {
-  git checkout master
-  git pull
-  git checkout development
-  git pull
-  git merge master
-}
-
 # Method to check every git repo from a containing directory
 function checkgit() {
   for d in */ ; do
@@ -102,5 +93,5 @@ function clean_node_packages() {
 
 alias dev="cd /Users/ryankrol/Development"
 alias zshrc="cd /Users/ryankrol/Development/Zshrc"
-
 alias zip="zip -r $@"
+alias codeadd="code -a $@"
